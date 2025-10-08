@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc && node dist/index.js",
-    "server": "tsc && node dist/index.js"
+    "server": "tsc && node dist/index.js",
+    "wipe": "tsc && node dist/wipe.js"
   },
   "keywords": [],
   "author": "Patrick Foster",
