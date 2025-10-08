@@ -10,11 +10,9 @@ import DemoRouter from './routes/demo';
 
 
 export default class Api {
-    private port: number;
     private dbUrl: string;
     private clientUrl: string;
-    constructor(port: number, dbUrl: string, clientUrl: string) {
-        this.port = port;
+    constructor(dbUrl: string, clientUrl: string) {
         this.dbUrl = dbUrl;
         this.clientUrl = clientUrl;
     }
@@ -51,10 +49,9 @@ export default class Api {
         app.use(`/demo`, DemoRouter);
         app.use(this.error());
 
-        let PORT: number | string = process.env.PORT;
-        if (PORT == null || PORT == "") {
-            PORT = this.port;
-        }
+
+        const PORT = 4500;
+        
         app.listen(PORT, () => {
             return console.log(`🥑 We're live: ${PORT}`);
         });
